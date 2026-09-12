@@ -1,13 +1,21 @@
-// Cloudflare Pages Function: POST /api/save
-// Verifies the edit password, then commits the updated page content
-// to your GitHub repo as both state.json (a snapshot) and index.html (the live file).
+// functions/api/save.js
+// Cloudflare Pages Function — handles POST /api/save
 //
-// Required Cloudflare Pages environment variables (set in project Settings > Environment variables):
-//   GITHUB_TOKEN        - fine-grained GitHub PAT, scoped to this repo, "Contents: Read and write"
-//   GITHUB_OWNER        - your GitHub username or org, e.g. "yourname"
-//   GITHUB_REPO         - repo name, e.g. "my-site"
-//   GITHUB_BRANCH       - branch to commit to, e.g. "main" (defaults to "main" if unset)
-//   EDIT_PASSWORD_HASH  - same SHA-256 hash used in index.html, so the server double-checks it
+// Required environment variables (set in Cloudflare Pages dashboard ->
+// Settings -> Environment variables -> Production, as *secrets*):
+//   GITHUB_TOKEN     - a GitHub personal access token with repo write access
+//   GITHUB_OWNER     - e.g. "your-username"
+//   GITHUB_REPO      - e.g. "your-portfolio"
+//   GITHUB_BRANCH    - e.g. "main"
+//   GITHUB_FILE_PATH - e.g. "index.html"
+//   SAVE_PASSWORD_HASH - the SAME sha256 hash your front-end already checks
+//                         against (the _b1 constant in your page's script).
+//
+// IMPORTANT: your current page checks the password purely client-side
+// before ever calling this endpoint. That check is trivially bypassable
+// (anyone can open devtools and call fetch('/api/save', ...) directly).
+// This function re-checks the password hash server-side so a stolen/guessed
+// call can't write to your repo without it.
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -15,102 +23,80 @@ export async function onRequestPost(context) {
   let body;
   try {
     body = await request.json();
-  } catch {
-    return json({ ok: false, error: "Invalid JSON body" }, 400);
+  } catch (err) {
+    return json({ ok: false, error: 'Invalid JSON body' }, 400);
   }
 
-  const { passwordHash, html } = body;
+  const { passwordHash, html } = body || {};
 
-  if (!passwordHash || passwordHash !== env.EDIT_PASSWORD_HASH) {
-    return json({ ok: false, error: "Unauthorized" }, 401);
+  if (!passwordHash || passwordHash !== env.SAVE_PASSWORD_HASH) {
+    return json({ ok: false, error: 'Unauthorized' }, 401);
+  }
+  if (typeof html !== 'string' || html.length < 10) {
+    return json({ ok: false, error: 'Missing or invalid html' }, 400);
   }
 
-  if (!html || typeof html !== "string") {
-    return json({ ok: false, error: "Missing html" }, 400);
-  }
+  const { GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO, GITHUB_BRANCH, GITHUB_FILE_PATH } = env;
 
-  const owner = env.GITHUB_OWNER;
-  const repo = env.GITHUB_REPO;
-  const branch = env.GITHUB_BRANCH || "main";
-  const token = env.GITHUB_TOKEN;
-
-  const statePayload = JSON.stringify(
-    { html, updatedAt: new Date().toISOString() },
-    null,
-    2
-  );
+  const apiUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`;
 
   try {
-    await commitFile({
-      owner, repo, branch, token,
-      path: "state.json",
-      content: statePayload,
-      message: "chore: update state.json via site editor",
+    // 1. Get the current file's SHA (required by GitHub to update a file)
+    const getResp = await fetch(`${apiUrl}?ref=${GITHUB_BRANCH}`, {
+      headers: {
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
+        'User-Agent': 'cf-pages-save-function',
+        Accept: 'application/vnd.github+json',
+      },
     });
-    await commitFile({
-      owner, repo, branch, token,
-      path: "index.html",
-      content: html,
-      message: "chore: update index.html via site editor",
+
+    if (!getResp.ok) {
+      const errText = await getResp.text();
+      return json({ ok: false, error: `GitHub GET failed: ${getResp.status} ${errText}` }, 502);
+    }
+
+    const currentFile = await getResp.json();
+    const sha = currentFile.sha;
+
+    // 2. PUT the updated content (base64-encoded, GitHub requirement)
+    const putResp = await fetch(apiUrl, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
+        'User-Agent': 'cf-pages-save-function',
+        Accept: 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: 'Update site content via editor',
+        content: base64Encode(html),
+        sha,
+        branch: GITHUB_BRANCH,
+      }),
     });
+
+    if (!putResp.ok) {
+      const errText = await putResp.text();
+      return json({ ok: false, error: `GitHub PUT failed: ${putResp.status} ${errText}` }, 502);
+    }
+
+    return json({ ok: true });
   } catch (err) {
-    return json({ ok: false, error: err.message }, 500);
+    return json({ ok: false, error: `Unexpected error: ${err.message}` }, 500);
   }
-
-  return json({ ok: true });
-}
-
-async function commitFile({ owner, repo, branch, token, path, content, message }) {
-  const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}`;
-
-  // Look up the current file's SHA — GitHub requires this to update an existing file.
-  let sha;
-  const getResp = await fetch(`${apiUrl}?ref=${branch}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "User-Agent": "cf-pages-save-function",
-      Accept: "application/vnd.github+json",
-    },
-  });
-  if (getResp.ok) {
-    const data = await getResp.json();
-    sha = data.sha;
-  } else if (getResp.status !== 404) {
-    throw new Error(`GitHub GET failed for ${path}: ${getResp.status}`);
-  }
-
-  const putResp = await fetch(apiUrl, {
-    method: "PUT",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "User-Agent": "cf-pages-save-function",
-      Accept: "application/vnd.github+json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      message,
-      content: base64Encode(content),
-      branch,
-      ...(sha ? { sha } : {}),
-    }),
-  });
-
-  if (!putResp.ok) {
-    const errText = await putResp.text();
-    throw new Error(`GitHub PUT failed for ${path}: ${putResp.status} ${errText}`);
-  }
-}
-
-function base64Encode(str) {
-  const bytes = new TextEncoder().encode(str);
-  let binary = "";
-  bytes.forEach((b) => (binary += String.fromCharCode(b)));
-  return btoa(binary);
 }
 
 function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
     status,
-    headers: { "Content-Type": "application/json" },
+    headers: { 'Content-Type': 'application/json' },
   });
+}
+
+// btoa() doesn't handle UTF-8 safely; this does.
+function base64Encode(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = '';
+  bytes.forEach((b) => (binary += String.fromCharCode(b)));
+  return btoa(binary);
 }
