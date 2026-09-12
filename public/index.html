@@ -105,7 +105,21 @@
 <button class="fab-main open" id="fabMain">+</button>
 </div>
 
+<div class="modal-overlay" id="passModal">
+<div class="modal-box">
+<h4>Enter password to edit</h4>
+<input type="password" id="passInput" placeholder="Password" autocomplete="off">
+<p class="err" id="passErr">Incorrect password.</p>
+<div class="row">
+<button class="cancel" id="passCancel" type="button">Cancel</button>
+<button class="confirm" id="passConfirm" type="button">Confirm</button>
+</div>
+</div>
+</div>
 
+<div class="edit-banner" id="editBanner">
+<button id="exitBtn" type="button">Exit editing &amp; save</button>
+</div>
 
 
 
@@ -193,7 +207,7 @@ const _b37 = document.getElementById('passCancel');
 const _b20 = document.getElementById('editBanner');
 const _b24 = document.getElementById('exitBtn');
 const _b35 = document.getElementById('page-content');
-_b18.dataset.url = _b3;
+if (!_b18.dataset.url) _b18.dataset.url = _b3;
 let _b27 = false;
 function _b45(open){
 _b27 = open;
