@@ -17,6 +17,16 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    // TEMPORARY DEBUG ROUTE - remove once the Unauthorized issue is fixed
+    if (url.pathname === '/api/debug' && request.method === 'GET') {
+      const expected = env.SAVE_PASSWORD_HASH || '';
+      return json({
+        expectedLength: expected.length,
+        expectedPreview: expected ? `${expected.slice(0, 6)}...${expected.slice(-6)}` : '(empty/undefined)',
+        hasHiddenChars: /\s/.test(expected) || expected !== expected.trim(),
+      });
+    }
+
     if (url.pathname === '/api/save' && request.method === 'POST') {
       return handleSave(request, env);
     }
