@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>:root{--bg:#000000;--ink:#F5F5F3;--muted:#9A9C97;--muted-2:#6E706B;--line:rgba(255,255,255,0.12);--card:rgba(255,255,255,0.04);--card-hover:rgba(255,255,255,0.07);--glow:rgba(255,255,255,0.5)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;opacity:0;animation:page-fade-in .6s ease .05s forwards}@keyframes page-fade-in{from{opacity:0}to{opacity:1}}@media (prefers-reduced-motion:reduce){body{opacity:1;animation:none}}a{color:inherit}p{margin:0}.glow{position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:1100px;height:620px;background:radial-gradient(ellipse at center,var(--glow) 0%,rgba(255,255,255,0.08) 40%,transparent 72%);filter:blur(10px);pointer-events:none;z-index:0}.container{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1}.nav-wrap{position:sticky;top:20px;z-index:50;display:flex;justify-content:center;padding:0 20px;animation:nav-drop .7s cubic-bezier(.16,.84,.44,1) .1s both}@keyframes nav-drop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}@media (prefers-reduced-motion:reduce){.nav-wrap{animation:none}}nav{display:flex;align-items:center;gap:32px;background:rgba(255,255,255,0.06);border:1px solid var(--line);backdrop-filter:blur(16px);border-radius:999px;padding:10px 12px 10px 20px}nav .logo{font-weight:600;font-size:14px;margin-right:8px}nav .links{display:flex;gap:26px}nav .links a{font-size:13.5px;color:var(--muted);text-decoration:none;transition:color .2s ease;position:relative}nav .links a::after{content:'';position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .3s cubic-bezier(.16,.84,.44,1)}nav .links a:hover::after{transform:scaleX(1);transform-origin:left}nav .links a:hover{color:var(--ink)}nav .cta{font-size:13.5px;font-weight:600;color:#0A0A0A;background:linear-gradient(180deg,#FFFFFF,#D8D9D5);padding:9px 18px;border-radius:999px;text-decoration:none;white-space:nowrap;display:inline-block;transition:transform .25s cubic-bezier(.16,.84,.44,1),box-shadow .25s ease}nav .cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,255,255,0.18)}@media (max-width:700px){nav .links{display:none}}.hero{position:relative;padding:120px 0 60px;text-align:center}.badge{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:var(--card);padding:6px 14px 6px 6px;border-radius:999px;margin-bottom:28px}.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#6EE7A8;margin-left:6px;animation:pulse-dot 2s ease-in-out infinite}@keyframes pulse-dot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(110,231,168,0.5)}50%{opacity:0.5;box-shadow:0 0 0 4px rgba(110,231,168,0)}}.badge span.tag{background:rgba(255,255,255,0.12);color:var(--ink);font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px}h1{font-size:clamp(34px,5.2vw,58px);font-weight:600;line-height:1.12;letter-spacing:-0.02em;margin:0 auto 22px;max-width:820px;background:linear-gradient(180deg,#FFFFFF 20%,#A6A8A2 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero .sub{font-size:16.5px;color:var(--muted);max-width:520px;margin:0 auto 36px}.btn-row{display:flex;justify-content:center;gap:14px;margin-bottom:72px}.btn-primary{font-size:14px;font-weight:600;color:#0A0A0A;background:linear-gradient(180deg,#FFFFFF,#D8D9D5);padding:13px 24px;border-radius:999px;text-decoration:none;display:inline-block;transition:transform .25s cubic-bezier(.16,.84,.44,1),box-shadow .25s ease}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,255,255,0.18)}.btn-ghost{font-size:14px;font-weight:500;color:var(--ink);background:var(--card);border:1px solid var(--line);padding:13px 24px;border-radius:999px;text-decoration:none;display:inline-block;transition:transform .25s cubic-bezier(.16,.84,.44,1),background .2s ease,border-color .2s ease}.btn-ghost:hover{transform:translateY(-2px);background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.3)}.visual{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));border-radius:20px;padding:14px;backdrop-filter:blur(20px)}.visual .screen{background:#0B0B0B;border:1px solid var(--line);border-radius:12px;padding:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.visual .tile{background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:10px;height:130px;display:flex;align-items:flex-end;padding:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s ease,transform .2s ease}.visual .tile:hover{background:rgba(255,255,255,0.05);transform:translateY(-2px)}.visual .tile p{font-size:12px;color:var(--muted-2)}.visual .tile.wide{grid-column:span 2}@media (max-width:700px){.visual .screen{grid-template-columns:1fr 1fr}.visual .tile.wide{grid-column:span 2}}.logos{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;padding:56px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.logos span{font-size:13px;letter-spacing:0.03em;color:var(--muted-2);font-weight:500}.section{padding:96px 0}.kicker{display:block;text-align:center;font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:var(--card);width:fit-content;margin:0 auto 20px;padding:5px 14px;border-radius:999px}.section h2{text-align:center;font-size:clamp(26px,3.4vw,36px);font-weight:600;letter-spacing:-0.01em;max-width:620px;margin:0 auto 16px}.section .lede{text-align:center;color:var(--muted);font-size:15px;max-width:480px;margin:0 auto 56px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media (max-width:860px){.grid{grid-template-columns:1fr 1fr}}@media (max-width:560px){.grid{grid-template-columns:1fr}}.card{background:rgba(255,255,255,0.025);border:1px solid var(--line);border-radius:16px;padding:26px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .2s ease,border-color .2s ease,transform .2s ease}.card:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.22);transform:translateY(-3px)}.card .icon{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.08);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:20px;transition:transform .3s cubic-bezier(.16,.84,.44,1),background .2s ease}.card:hover .icon{transform:rotate(-8deg) scale(1.08);background:rgba(255,255,255,0.14)}.card .meta{font-size:12px;color:var(--muted-2);margin-bottom:6px}.card h3{font-size:17px;font-weight:600;margin:0 0 8px}.card p.desc{font-size:14px;color:var(--muted);line-height:1.6}.about-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}.about-wrap h2{text-align:left;margin:0 0 16px;max-width:none}.about-wrap .lede{text-align:left;margin:0 0 28px;max-width:440px}.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.stat-card{background:rgba(255,255,255,0.025);border:1px solid var(--line);border-radius:16px;padding:22px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .2s ease,transform .2s ease}.stat-card:hover{background:rgba(255,255,255,0.06);transform:translateY(-3px)}.stat-card .num{font-size:28px;font-weight:600;margin-bottom:4px}.stat-card .label{font-size:13px;color:var(--muted)}@media (max-width:800px){.about-wrap{grid-template-columns:1fr}.about-wrap h2,.about-wrap .lede{text-align:center;margin-left:auto;margin-right:auto}}.cta-section{text-align:center;padding:100px 0 40px}.cta-section h2{margin:0 auto 16px}.wordmark-wrap{position:relative;text-align:center;padding-top:40px;overflow:hidden}.wordmark{font-size:clamp(40px,11vw,150px);font-weight:700;letter-spacing:-0.03em;line-height:1;background:linear-gradient(100deg,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.35) 45%,rgba(255,255,255,0.06) 60%,rgba(255,255,255,0.02) 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;margin:0;animation:shimmer 7s ease-in-out infinite}@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}@media (prefers-reduced-motion:reduce){.wordmark{animation:none}}footer{display:flex;justify-content:space-between;font-size:13px;color:var(--muted-2);padding:28px 0 48px;border-top:1px solid var(--line);flex-wrap:wrap;gap:12px}footer .links{display:flex;gap:22px}footer a{text-decoration:none;color:var(--muted-2)}footer a:hover{color:var(--ink)}:focus-visible{outline:2px solid var(--ink);outline-offset:2px}#stars-bg{position:fixed;inset:0;overflow:hidden;pointer-events:none}#stars-bg .star{position:absolute;background:#ffffff;border-radius:50%;animation-name:twinkle;animation-timing-function:ease-in-out;animation-iteration-count:infinite}@keyframes twinkle{0%,100%{opacity:var(--min-op,0.15)}50%{opacity:var(--max-op,0.75)}}@media (prefers-reduced-motion:reduce){#stars-bg .star{animation:none;opacity:0.4}}#page-content > section.section,#page-content > section.cta-section{background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:28px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);margin:28px auto;padding:88px 44px}@media (max-width:700px){#page-content > section.section,#page-content > section.cta-section{padding:64px 24px;border-radius:20px;margin:18px 12px}}.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,.84,.44,1),transform .8s cubic-bezier(.16,.84,.44,1);will-change:opacity,transform}.reveal.in-view{opacity:1;transform:translateY(0)}@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}.fab-wrap{position:fixed;bottom:24px;right:24px;z-index:200;display:flex;flex-direction:column;align-items:flex-end;gap:10px}.fab-bar{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;color:var(--ink);background:rgba(20,20,20,0.9);border:1px solid var(--line);backdrop-filter:blur(16px);border-radius:999px;padding:11px 20px;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,0.35);opacity:0;transform:translateY(8px) scale(0.96);pointer-events:none;transition:opacity .18s ease,transform .18s ease;white-space:nowrap}.fab-bar.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}.fab-bar:hover{border-color:rgba(255,255,255,0.3);background:rgba(30,30,30,0.9)}.fab-bar .dot{width:8px;height:8px;border-radius:50%}.fab-bar.discord .dot{background:#5865F2}.fab-bar.edit .dot{background:#F5F5F3}.fab-main{width:52px;height:52px;border-radius:50%;background:linear-gradient(180deg,#FFFFFF,#D8D9D5);color:#0A0A0A;border:none;font-size:22px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.4);transition:transform .2s ease}.fab-main.open{transform:rotate(45deg)}.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:300;display:none;align-items:center;justify-content:center}.modal-overlay.show{display:flex}.modal-box{background:#111;border:1px solid var(--line);border-radius:16px;padding:28px;width:320px;max-width:calc(100vw - 40px)}.modal-box h4{margin:0 0 14px;font-size:15px;font-weight:600}.modal-box input{width:100%;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:10px;padding:11px 14px;color:var(--ink);font-size:14px;margin-bottom:10px}.modal-box .err{font-size:12.5px;color:#ff6b6b;margin-bottom:10px;display:none}.modal-box .row{display:flex;gap:10px;margin-top:4px}.modal-box button{flex:1;border:none;border-radius:999px;padding:10px 0;font-size:13.5px;font-weight:600;cursor:pointer}.modal-box .confirm{background:linear-gradient(180deg,#FFFFFF,#D8D9D5);color:#0A0A0A}.modal-box .cancel{background:var(--card);color:var(--ink);border:1px solid var(--line) !important}.edit-banner{position:fixed;top:16px;right:16px;z-index:250;display:none}.edit-banner.show{display:flex}.edit-banner button{border:none;border-radius:999px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;background:#F5F5F3;color:#0A0A0A;box-shadow:0 8px 24px rgba(0,0,0,0.35)}#page-content.editing{padding-top:0}#page-content.editing [contenteditable="true"]:hover{outline:1px dashed rgba(255,255,255,0.35);outline-offset:2px}#page-content.editing .grid > *,#page-content.editing .stat-grid > *,#page-content.editing .visual .screen > *,#page-content.editing .logos > *,#page-content.editing .entries > *{position:relative}.edit-del{position:absolute;top:-9px;right:-9px;width:24px;height:24px;border-radius:50%;background:#ff5c5c;color:#fff;border:2px solid #000;font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:20;opacity:0;transition:opacity .15s ease,transform .15s ease;font-weight:700}#page-content.editing .grid > *:hover > .edit-del,#page-content.editing .stat-grid > *:hover > .edit-del,#page-content.editing .visual .screen > *:hover > .edit-del,#page-content.editing .logos > *:hover > .edit-del,#page-content.editing .entries > *:hover > .edit-del{opacity:1}.edit-del:hover{transform:scale(1.1)}.edit-add-ghost{border:1px dashed rgba(255,255,255,0.35);border-radius:16px;color:var(--muted);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;cursor:pointer;min-height:90px;transition:border-color .15s ease,color .15s ease}.edit-add-ghost:hover{border-color:rgba(255,255,255,0.6);color:var(--ink)}.logos .edit-add-ghost{min-height:unset;padding:6px 16px;border-radius:999px}.visual .screen .edit-add-ghost{min-height:130px;border-radius:10px}#page-content.editing > header,#page-content.editing > section,#page-content.editing > .wordmark-wrap{position:relative;outline:1px dashed transparent;transition:outline-color .15s ease}#page-content.editing > header:hover,#page-content.editing > section:hover,#page-content.editing > .wordmark-wrap:hover{outline-color:rgba(255,92,92,0.5)}.edit-del-section{position:absolute;top:10px;left:32px;background:#ff5c5c;color:#fff;border:none;border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;z-index:20;opacity:0;transition:opacity .15s ease}#page-content.editing > header:hover > .edit-del-section,#page-content.editing > section:hover > .edit-del-section,#page-content.editing > .wordmark-wrap:hover > .edit-del-section{opacity:1}.edit-add-section{margin:16px auto;max-width:1120px;border:1px dashed rgba(255,255,255,0.35);border-radius:16px;color:var(--muted);font-size:13px;font-weight:500;text-align:center;padding:14px;cursor:pointer;transition:border-color .15s ease,color .15s ease}.edit-add-section:hover{border-color:rgba(255,255,255,0.6);color:var(--ink)}.fab-bar.discord .social-label{outline-offset:3px}.fab-wrap.editing .fab-bar.discord .social-label{text-decoration:underline dashed;cursor:text}.edit-pencil{display:none;font-size:12px;margin-left:2px}.fab-wrap.editing .edit-pencil{display:inline-flex}#page-content.editing .icon{position:relative}.edit-drag{position:absolute;top:-9px;left:-9px;width:24px;height:24px;border-radius:50%;background:#3b82f6;color:#fff;border:2px solid #000;font-size:12px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:grab;z-index:21;opacity:0;transition:opacity .15s ease,transform .15s ease}.edit-drag:active{cursor:grabbing}.edit-drag:hover{transform:scale(1.1)}#page-content.editing .grid > *:hover > .edit-drag,#page-content.editing .stat-grid > *:hover > .edit-drag,#page-content.editing .visual .screen > *:hover > .edit-drag,#page-content.editing .logos > *:hover > .edit-drag,#page-content.editing .entries > *:hover > .edit-drag{opacity:1}#page-content.editing .grid > *.dragging,#page-content.editing .stat-grid > *.dragging,#page-content.editing .visual .screen > *.dragging,#page-content.editing .logos > *.dragging,#page-content.editing .entries > *.dragging{opacity:0.35}.edit-img-btn{position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#3b82f6;color:#fff;border:2px solid #000;font-size:11px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:21;opacity:0;transition:opacity .15s ease;padding:0}#page-content.editing .card:hover .edit-img-btn,#page-content.editing .avatar:hover .edit-img-btn{opacity:1}.edit-resize{position:absolute;right:-5px;bottom:-5px;width:14px;height:14px;background:#3b82f6;border:2px solid #000;border-radius:3px;cursor:nwse-resize;z-index:21;opacity:0;transition:opacity .15s ease}#page-content.editing .card:hover .edit-resize,#page-content.editing .avatar:hover .edit-resize{opacity:1}.icon img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}.avatar.icon{width:128px;height:128px;border-radius:50%;font-size:44px;margin:0 auto 28px}.entries{display:flex;flex-direction:column;gap:16px;text-align:left}.entry .meta{margin-bottom:6px}.entry-link{margin-top:14px}.edit-add-row{display:flex;gap:10px;max-width:1120px;margin:16px auto;padding:0 12px}.edit-add-row .edit-add-section{flex:1;margin:0}@media (max-width:600px){.edit-add-row{flex-direction:column}}.photo-wrap img{max-width:100%}#page-content.editing .photo-wrap:hover .edit-img-btn,#page-content.editing .photo-wrap:hover .edit-resize{opacity:1}.edit-link-pencil{font-size:11px;margin-left:6px;cursor:pointer;opacity:0.65;user-select:none;display:inline-block}.edit-link-pencil:hover{opacity:1}.edit-add-photo-ghost{display:inline-flex;vertical-align:top;align-items:center;justify-content:center;text-align:center;width:64px;height:64px;margin:0 8px 8px 0;padding:4px;border:1px dashed rgba(255,255,255,0.35);border-radius:10px;color:var(--muted);font-size:11px;font-weight:500;cursor:pointer;transition:border-color .15s ease,color .15s ease}.edit-add-photo-ghost:hover{border-color:rgba(255,255,255,0.6);color:var(--ink)}.edit-photo-remove{position:absolute;top:-8px;left:-8px;width:22px;height:22px;border-radius:50%;background:#ff5c5c;color:#fff;border:2px solid #000;font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:21;opacity:0;transition:opacity .15s ease;padding:0}#page-content.editing .card:hover .edit-photo-remove,#page-content.editing .photo-wrap:hover .edit-photo-remove{opacity:1}</style>
 </head>
-<body>
-<div id="page-content" style="position:relative;">
+<body><div id="stars-bg" aria-hidden="true"><div class="star" style="width: 1.61px; height: 1.61px; top: 10.47%; left: 91.57%; --min-op: 0.23; --max-op: 0.62; animation-duration: 4.47s; animation-delay: 0.35s;"></div><div class="star" style="width: 1.98px; height: 1.98px; top: 87.93%; left: 17.54%; --min-op: 0.21; --max-op: 0.79; animation-duration: 2.73s; animation-delay: 0.16s;"></div><div class="star" style="width: 2.49px; height: 2.49px; top: 0.14%; left: 86.88%; --min-op: 0.12; --max-op: 0.68; animation-duration: 2.87s; animation-delay: 3.41s;"></div><div class="star" style="width: 2.09px; height: 2.09px; top: 46.33%; left: 1.17%; --min-op: 0.19; --max-op: 0.90; animation-duration: 4.43s; animation-delay: 2.03s;"></div><div class="star" style="width: 1.68px; height: 1.68px; top: 16.16%; left: 54.12%; --min-op: 0.22; --max-op: 0.75; animation-duration: 4.04s; animation-delay: 0.72s;"></div><div class="star" style="width: 1.51px; height: 1.51px; top: 42.19%; left: 44.25%; --min-op: 0.14; --max-op: 0.64; animation-duration: 5.08s; animation-delay: 3.35s;"></div><div class="star" style="width: 2.23px; height: 2.23px; top: 30.69%; left: 24.45%; --min-op: 0.17; --max-op: 0.89; animation-duration: 3.08s; animation-delay: 1.89s;"></div><div class="star" style="width: 0.91px; height: 0.91px; top: 37.51%; left: 44.88%; --min-op: 0.14; --max-op: 0.86; animation-duration: 3.22s; animation-delay: 2.22s;"></div><div class="star" style="width: 0.94px; height: 0.94px; top: 23.57%; left: 30.64%; --min-op: 0.30; --max-op: 0.67; animation-duration: 3.4s; animation-delay: 0.55s;"></div><div class="star" style="width: 1.28px; height: 1.28px; top: 61.63%; left: 45.94%; --min-op: 0.20; --max-op: 0.59; animation-duration: 3.47s; animation-delay: 3.64s;"></div><div class="star" style="width: 0.64px; height: 0.64px; top: 87.11%; left: 26.95%; --min-op: 0.19; --max-op: 0.85; animation-duration: 2.9s; animation-delay: 1.18s;"></div><div class="star" style="width: 1.81px; height: 1.81px; top: 30.49%; left: 49.29%; --min-op: 0.13; --max-op: 0.61; animation-duration: 4.92s; animation-delay: 2.67s;"></div><div class="star" style="width: 1.75px; height: 1.75px; top: 28.62%; left: 15.93%; --min-op: 0.12; --max-op: 0.88; animation-duration: 4.27s; animation-delay: 0.63s;"></div><div class="star" style="width: 1.14px; height: 1.14px; top: 7.23%; left: 39.57%; --min-op: 0.32; --max-op: 0.73; animation-duration: 3.79s; animation-delay: 0.49s;"></div><div class="star" style="width: 1.36px; height: 1.36px; top: 90.84%; left: 62.5%; --min-op: 0.20; --max-op: 0.86; animation-duration: 5.15s; animation-delay: 2.11s;"></div><div class="star" style="width: 2.6px; height: 2.6px; top: 54.63%; left: 88.09%; --min-op: 0.16; --max-op: 0.81; animation-duration: 4.69s; animation-delay: 0.15s;"></div><div class="star" style="width: 0.73px; height: 0.73px; top: 83.94%; left: 38.8%; --min-op: 0.15; --max-op: 0.63; animation-duration: 3.82s; animation-delay: 0.62s;"></div><div class="star" style="width: 1.96px; height: 1.96px; top: 4.26%; left: 82.55%; --min-op: 0.22; --max-op: 0.84; animation-duration: 4.59s; animation-delay: 3.82s;"></div><div class="star" style="width: 1.58px; height: 1.58px; top: 89.96%; left: 53.17%; --min-op: 0.25; --max-op: 0.72; animation-duration: 2.61s; animation-delay: 2.87s;"></div><div class="star" style="width: 0.92px; height: 0.92px; top: 44.48%; left: 39.99%; --min-op: 0.14; --max-op: 0.61; animation-duration: 3.55s; animation-delay: 3.3s;"></div><div class="star" style="width: 2.26px; height: 2.26px; top: 40.46%; left: 23.78%; --min-op: 0.16; --max-op: 0.64; animation-duration: 5s; animation-delay: 2.04s;"></div><div class="star" style="width: 1.2px; height: 1.2px; top: 31.13%; left: 35.39%; --min-op: 0.14; --max-op: 0.80; animation-duration: 2.78s; animation-delay: 1.07s;"></div><div class="star" style="width: 1.59px; height: 1.59px; top: 76.7%; left: 0.47%; --min-op: 0.27; --max-op: 0.72; animation-duration: 3.04s; animation-delay: 3.85s;"></div><div class="star" style="width: 0.74px; height: 0.74px; top: 35.67%; left: 35.66%; --min-op: 0.22; --max-op: 0.62; animation-duration: 4.15s; animation-delay: 0.44s;"></div><div class="star" style="width: 0.69px; height: 0.69px; top: 53.53%; left: 96.82%; --min-op: 0.25; --max-op: 0.85; animation-duration: 4.44s; animation-delay: 1.7s;"></div><div class="star" style="width: 2.06px; height: 2.06px; top: 95.55%; left: 26.58%; --min-op: 0.17; --max-op: 0.58; animation-duration: 4.5s; animation-delay: 2.78s;"></div><div class="star" style="width: 1.61px; height: 1.61px; top: 38.06%; left: 3.27%; --min-op: 0.29; --max-op: 0.90; animation-duration: 4.6s; animation-delay: 3.6s;"></div><div class="star" style="width: 0.9px; height: 0.9px; top: 86.67%; left: 42.03%; --min-op: 0.25; --max-op: 0.85; animation-duration: 4.6s; animation-delay: 2.5s;"></div><div class="star" style="width: 2.02px; height: 2.02px; top: 14.72%; left: 77.36%; --min-op: 0.12; --max-op: 0.57; animation-duration: 3.5s; animation-delay: 3.52s;"></div><div class="star" style="width: 1.49px; height: 1.49px; top: 43.34%; left: 75.46%; --min-op: 0.29; --max-op: 0.71; animation-duration: 4.63s; animation-delay: 1.43s;"></div><div class="star" style="width: 1.85px; height: 1.85px; top: 6.76%; left: 3.88%; --min-op: 0.19; --max-op: 0.79; animation-duration: 2.5s; animation-delay: 2.13s;"></div><div class="star" style="width: 1.75px; height: 1.75px; top: 25.96%; left: 74.45%; --min-op: 0.21; --max-op: 0.63; animation-duration: 3.57s; animation-delay: 0.61s;"></div><div class="star" style="width: 2.5px; height: 2.5px; top: 50.78%; left: 49.89%; --min-op: 0.19; --max-op: 0.80; animation-duration: 2.85s; animation-delay: 2.74s;"></div><div class="star" style="width: 2.49px; height: 2.49px; top: 76.24%; left: 59.67%; --min-op: 0.31; --max-op: 0.65; animation-duration: 5.06s; animation-delay: 2.79s;"></div><div class="star" style="width: 2.49px; height: 2.49px; top: 80.61%; left: 13.2%; --min-op: 0.30; --max-op: 0.68; animation-duration: 5.4s; animation-delay: 2.05s;"></div><div class="star" style="width: 2.2px; height: 2.2px; top: 77.84%; left: 50.17%; --min-op: 0.31; --max-op: 0.67; animation-duration: 3.61s; animation-delay: 1.23s;"></div><div class="star" style="width: 1.24px; height: 1.24px; top: 21.4%; left: 64.02%; --min-op: 0.17; --max-op: 0.89; animation-duration: 4.11s; animation-delay: 1.14s;"></div><div class="star" style="width: 2.18px; height: 2.18px; top: 33.84%; left: 43.76%; --min-op: 0.19; --max-op: 0.89; animation-duration: 2.66s; animation-delay: 3.36s;"></div><div class="star" style="width: 2.39px; height: 2.39px; top: 6.02%; left: 47.35%; --min-op: 0.15; --max-op: 0.73; animation-duration: 2.68s; animation-delay: 3.02s;"></div><div class="star" style="width: 1px; height: 1px; top: 49.36%; left: 69.58%; --min-op: 0.23; --max-op: 0.79; animation-duration: 4.33s; animation-delay: 0.04s;"></div><div class="star" style="width: 2.06px; height: 2.06px; top: 46.03%; left: 29.17%; --min-op: 0.30; --max-op: 0.87; animation-duration: 3.84s; animation-delay: 1.24s;"></div><div class="star" style="width: 2.47px; height: 2.47px; top: 33.79%; left: 9.68%; --min-op: 0.12; --max-op: 0.64; animation-duration: 4.6s; animation-delay: 1.54s;"></div><div class="star" style="width: 1.37px; height: 1.37px; top: 37.4%; left: 53.18%; --min-op: 0.21; --max-op: 0.64; animation-duration: 5.37s; animation-delay: 0.84s;"></div><div class="star" style="width: 2.19px; height: 2.19px; top: 27.15%; left: 16.05%; --min-op: 0.16; --max-op: 0.88; animation-duration: 4.57s; animation-delay: 2.15s;"></div><div class="star" style="width: 2.49px; height: 2.49px; top: 58.84%; left: 29.47%; --min-op: 0.24; --max-op: 0.74; animation-duration: 4.31s; animation-delay: 1.73s;"></div><div class="star" style="width: 1.53px; height: 1.53px; top: 24.92%; left: 26.22%; --min-op: 0.21; --max-op: 0.76; animation-duration: 4.2s; animation-delay: 3.69s;"></div><div class="star" style="width: 1.55px; height: 1.55px; top: 6.53%; left: 93.18%; --min-op: 0.21; --max-op: 0.73; animation-duration: 3.69s; animation-delay: 0.68s;"></div><div class="star" style="width: 1.53px; height: 1.53px; top: 4.58%; left: 78.45%; --min-op: 0.27; --max-op: 0.81; animation-duration: 5.02s; animation-delay: 1.41s;"></div><div class="star" style="width: 1.28px; height: 1.28px; top: 18.65%; left: 41.68%; --min-op: 0.27; --max-op: 0.66; animation-duration: 3.95s; animation-delay: 2.74s;"></div><div class="star" style="width: 1.55px; height: 1.55px; top: 83.18%; left: 67.87%; --min-op: 0.15; --max-op: 0.72; animation-duration: 3.09s; animation-delay: 0.05s;"></div><div class="star" style="width: 1.89px; height: 1.89px; top: 72.47%; left: 41.3%; --min-op: 0.21; --max-op: 0.86; animation-duration: 4.02s; animation-delay: 1.97s;"></div><div class="star" style="width: 1.25px; height: 1.25px; top: 92.76%; left: 9.08%; --min-op: 0.22; --max-op: 0.75; animation-duration: 5.4s; animation-delay: 1.8s;"></div><div class="star" style="width: 1.66px; height: 1.66px; top: 75.4%; left: 74.44%; --min-op: 0.16; --max-op: 0.71; animation-duration: 3.98s; animation-delay: 2.57s;"></div><div class="star" style="width: 0.64px; height: 0.64px; top: 50.6%; left: 5.71%; --min-op: 0.20; --max-op: 0.70; animation-duration: 5.24s; animation-delay: 0.84s;"></div><div class="star" style="width: 2.52px; height: 2.52px; top: 75.36%; left: 70.34%; --min-op: 0.17; --max-op: 0.83; animation-duration: 4.74s; animation-delay: 2.51s;"></div><div class="star" style="width: 2.12px; height: 2.12px; top: 52.59%; left: 94.55%; --min-op: 0.18; --max-op: 0.76; animation-duration: 4.84s; animation-delay: 3.84s;"></div><div class="star" style="width: 0.73px; height: 0.73px; top: 60.21%; left: 50.83%; --min-op: 0.12; --max-op: 0.57; animation-duration: 2.61s; animation-delay: 1.41s;"></div><div class="star" style="width: 1.95px; height: 1.95px; top: 18.08%; left: 99.95%; --min-op: 0.17; --max-op: 0.78; animation-duration: 3.6s; animation-delay: 3.58s;"></div><div class="star" style="width: 2.18px; height: 2.18px; top: 94.6%; left: 76.23%; --min-op: 0.13; --max-op: 0.57; animation-duration: 5.44s; animation-delay: 0.16s;"></div><div class="star" style="width: 1.3px; height: 1.3px; top: 70.37%; left: 36.83%; --min-op: 0.24; --max-op: 0.86; animation-duration: 3.64s; animation-delay: 2.53s;"></div><div class="star" style="width: 0.97px; height: 0.97px; top: 28.08%; left: 26.64%; --min-op: 0.21; --max-op: 0.67; animation-duration: 3.57s; animation-delay: 0.52s;"></div><div class="star" style="width: 1.47px; height: 1.47px; top: 23.71%; left: 62.11%; --min-op: 0.20; --max-op: 0.88; animation-duration: 4.02s; animation-delay: 3.32s;"></div><div class="star" style="width: 0.82px; height: 0.82px; top: 13.6%; left: 94.96%; --min-op: 0.30; --max-op: 0.72; animation-duration: 4.26s; animation-delay: 1.99s;"></div><div class="star" style="width: 2.24px; height: 2.24px; top: 64.98%; left: 93.59%; --min-op: 0.28; --max-op: 0.69; animation-duration: 3.8s; animation-delay: 1.57s;"></div><div class="star" style="width: 1.06px; height: 1.06px; top: 58.96%; left: 3.11%; --min-op: 0.30; --max-op: 0.85; animation-duration: 2.96s; animation-delay: 2.62s;"></div><div class="star" style="width: 1.3px; height: 1.3px; top: 74.4%; left: 14.54%; --min-op: 0.20; --max-op: 0.90; animation-duration: 3.63s; animation-delay: 3.51s;"></div><div class="star" style="width: 2.15px; height: 2.15px; top: 53.9%; left: 76.29%; --min-op: 0.25; --max-op: 0.69; animation-duration: 2.55s; animation-delay: 3.1s;"></div><div class="star" style="width: 1.87px; height: 1.87px; top: 56.85%; left: 0.75%; --min-op: 0.17; --max-op: 0.57; animation-duration: 3.46s; animation-delay: 1.85s;"></div><div class="star" style="width: 1.46px; height: 1.46px; top: 2.61%; left: 29.94%; --min-op: 0.16; --max-op: 0.87; animation-duration: 4.55s; animation-delay: 1.46s;"></div><div class="star" style="width: 2.18px; height: 2.18px; top: 9.12%; left: 11.89%; --min-op: 0.17; --max-op: 0.75; animation-duration: 4.67s; animation-delay: 0.95s;"></div><div class="star" style="width: 1.36px; height: 1.36px; top: 86.72%; left: 61.89%; --min-op: 0.12; --max-op: 0.63; animation-duration: 4.38s; animation-delay: 3.23s;"></div><div class="star" style="width: 0.9px; height: 0.9px; top: 16.26%; left: 39.03%; --min-op: 0.31; --max-op: 0.89; animation-duration: 3.14s; animation-delay: 1.56s;"></div><div class="star" style="width: 1.41px; height: 1.41px; top: 67.94%; left: 54.23%; --min-op: 0.24; --max-op: 0.81; animation-duration: 3.28s; animation-delay: 3.05s;"></div><div class="star" style="width: 1.99px; height: 1.99px; top: 28.67%; left: 58.84%; --min-op: 0.12; --max-op: 0.81; animation-duration: 2.76s; animation-delay: 1.51s;"></div><div class="star" style="width: 2.26px; height: 2.26px; top: 5.64%; left: 40.38%; --min-op: 0.18; --max-op: 0.78; animation-duration: 4.02s; animation-delay: 0.47s;"></div><div class="star" style="width: 2.57px; height: 2.57px; top: 82.9%; left: 95.39%; --min-op: 0.24; --max-op: 0.71; animation-duration: 4.37s; animation-delay: 2.18s;"></div><div class="star" style="width: 0.71px; height: 0.71px; top: 13.14%; left: 34.07%; --min-op: 0.22; --max-op: 0.86; animation-duration: 4.95s; animation-delay: 2.66s;"></div><div class="star" style="width: 1.05px; height: 1.05px; top: 41.49%; left: 94.38%; --min-op: 0.16; --max-op: 0.72; animation-duration: 3.15s; animation-delay: 3.6s;"></div><div class="star" style="width: 1.77px; height: 1.77px; top: 61.7%; left: 23.63%; --min-op: 0.21; --max-op: 0.58; animation-duration: 4.67s; animation-delay: 2.12s;"></div><div class="star" style="width: 1.71px; height: 1.71px; top: 19.78%; left: 19.18%; --min-op: 0.13; --max-op: 0.72; animation-duration: 4.58s; animation-delay: 1.29s;"></div><div class="star" style="width: 1.88px; height: 1.88px; top: 78.42%; left: 23.21%; --min-op: 0.16; --max-op: 0.85; animation-duration: 4.12s; animation-delay: 2.49s;"></div><div class="star" style="width: 1.43px; height: 1.43px; top: 71.02%; left: 45.01%; --min-op: 0.22; --max-op: 0.70; animation-duration: 4.33s; animation-delay: 2.59s;"></div><div class="star" style="width: 1.44px; height: 1.44px; top: 24.51%; left: 19.17%; --min-op: 0.18; --max-op: 0.75; animation-duration: 3.22s; animation-delay: 3.01s;"></div><div class="star" style="width: 0.86px; height: 0.86px; top: 57.99%; left: 81.97%; --min-op: 0.23; --max-op: 0.66; animation-duration: 2.91s; animation-delay: 0.28s;"></div><div class="star" style="width: 1.29px; height: 1.29px; top: 73.59%; left: 1.03%; --min-op: 0.29; --max-op: 0.66; animation-duration: 3.22s; animation-delay: 3.53s;"></div><div class="star" style="width: 1.3px; height: 1.3px; top: 1.86%; left: 67.59%; --min-op: 0.14; --max-op: 0.56; animation-duration: 3.16s; animation-delay: 2.56s;"></div><div class="star" style="width: 2.53px; height: 2.53px; top: 80.84%; left: 24.98%; --min-op: 0.15; --max-op: 0.83; animation-duration: 5.49s; animation-delay: 3.52s;"></div><div class="star" style="width: 1.89px; height: 1.89px; top: 8.07%; left: 88.45%; --min-op: 0.32; --max-op: 0.82; animation-duration: 4.05s; animation-delay: 2.72s;"></div><div class="star" style="width: 2.39px; height: 2.39px; top: 94.76%; left: 50.89%; --min-op: 0.31; --max-op: 0.62; animation-duration: 3.63s; animation-delay: 3.99s;"></div><div class="star" style="width: 1.73px; height: 1.73px; top: 10.91%; left: 27.13%; --min-op: 0.22; --max-op: 0.86; animation-duration: 3.43s; animation-delay: 3.9s;"></div><div class="star" style="width: 1.22px; height: 1.22px; top: 20.71%; left: 26.18%; --min-op: 0.15; --max-op: 0.55; animation-duration: 2.88s; animation-delay: 2.39s;"></div><div class="star" style="width: 1.81px; height: 1.81px; top: 34.48%; left: 45.82%; --min-op: 0.14; --max-op: 0.56; animation-duration: 2.53s; animation-delay: 3.63s;"></div><div class="star" style="width: 1.26px; height: 1.26px; top: 97.69%; left: 25.7%; --min-op: 0.15; --max-op: 0.59; animation-duration: 5.48s; animation-delay: 1.76s;"></div><div class="star" style="width: 2.5px; height: 2.5px; top: 76.1%; left: 98.32%; --min-op: 0.14; --max-op: 0.74; animation-duration: 4.99s; animation-delay: 1.95s;"></div><div class="star" style="width: 1.82px; height: 1.82px; top: 7.29%; left: 90.94%; --min-op: 0.30; --max-op: 0.63; animation-duration: 4.44s; animation-delay: 2.39s;"></div><div class="star" style="width: 0.9px; height: 0.9px; top: 34.85%; left: 22.7%; --min-op: 0.31; --max-op: 0.67; animation-duration: 4.03s; animation-delay: 0.62s;"></div><div class="star" style="width: 0.86px; height: 0.86px; top: 20.29%; left: 17.66%; --min-op: 0.19; --max-op: 0.55; animation-duration: 2.51s; animation-delay: 0.38s;"></div><div class="star" style="width: 1.14px; height: 1.14px; top: 97.17%; left: 71.78%; --min-op: 0.31; --max-op: 0.89; animation-duration: 4.2s; animation-delay: 0.28s;"></div><div class="star" style="width: 1px; height: 1px; top: 67.08%; left: 90.61%; --min-op: 0.31; --max-op: 0.62; animation-duration: 4.66s; animation-delay: 1.93s;"></div><div class="star" style="width: 2.48px; height: 2.48px; top: 81.71%; left: 43.23%; --min-op: 0.28; --max-op: 0.87; animation-duration: 4.51s; animation-delay: 2.86s;"></div><div class="star" style="width: 1.33px; height: 1.33px; top: 96.07%; left: 90.46%; --min-op: 0.21; --max-op: 0.57; animation-duration: 5.37s; animation-delay: 3.31s;"></div><div class="star" style="width: 1.61px; height: 1.61px; top: 30.44%; left: 17.06%; --min-op: 0.27; --max-op: 0.89; animation-duration: 4.17s; animation-delay: 2.99s;"></div><div class="star" style="width: 1.94px; height: 1.94px; top: 62.99%; left: 61.83%; --min-op: 0.29; --max-op: 0.84; animation-duration: 3.29s; animation-delay: 1.93s;"></div><div class="star" style="width: 1.56px; height: 1.56px; top: 5.91%; left: 73.01%; --min-op: 0.15; --max-op: 0.81; animation-duration: 4.31s; animation-delay: 1.86s;"></div><div class="star" style="width: 1.91px; height: 1.91px; top: 30.97%; left: 80.21%; --min-op: 0.26; --max-op: 0.79; animation-duration: 3.82s; animation-delay: 3.29s;"></div><div class="star" style="width: 1.4px; height: 1.4px; top: 42.39%; left: 15.58%; --min-op: 0.27; --max-op: 0.72; animation-duration: 3.85s; animation-delay: 2.94s;"></div><div class="star" style="width: 2.42px; height: 2.42px; top: 49.77%; left: 22.39%; --min-op: 0.17; --max-op: 0.87; animation-duration: 5.02s; animation-delay: 3.33s;"></div><div class="star" style="width: 2.59px; height: 2.59px; top: 54%; left: 47.02%; --min-op: 0.29; --max-op: 0.83; animation-duration: 4.4s; animation-delay: 1.78s;"></div><div class="star" style="width: 1.49px; height: 1.49px; top: 77.28%; left: 55.66%; --min-op: 0.31; --max-op: 0.62; animation-duration: 3.18s; animation-delay: 2.3s;"></div><div class="star" style="width: 2.34px; height: 2.34px; top: 20.07%; left: 10.52%; --min-op: 0.31; --max-op: 0.75; animation-duration: 2.68s; animation-delay: 2.39s;"></div><div class="star" style="width: 2.29px; height: 2.29px; top: 14.16%; left: 14.75%; --min-op: 0.25; --max-op: 0.83; animation-duration: 2.89s; animation-delay: 1.55s;"></div><div class="star" style="width: 1.31px; height: 1.31px; top: 60.04%; left: 51.79%; --min-op: 0.17; --max-op: 0.70; animation-duration: 4.12s; animation-delay: 2.7s;"></div><div class="star" style="width: 0.6px; height: 0.6px; top: 2.57%; left: 74.2%; --min-op: 0.21; --max-op: 0.89; animation-duration: 3.51s; animation-delay: 3.48s;"></div><div class="star" style="width: 1.33px; height: 1.33px; top: 68.13%; left: 90.43%; --min-op: 0.15; --max-op: 0.75; animation-duration: 4.13s; animation-delay: 2.8s;"></div><div class="star" style="width: 1.76px; height: 1.76px; top: 6.38%; left: 71.42%; --min-op: 0.17; --max-op: 0.86; animation-duration: 2.61s; animation-delay: 1.1s;"></div><div class="star" style="width: 1.85px; height: 1.85px; top: 13.78%; left: 38.21%; --min-op: 0.26; --max-op: 0.59; animation-duration: 5.05s; animation-delay: 0.17s;"></div><div class="star" style="width: 2.56px; height: 2.56px; top: 72.91%; left: 42.27%; --min-op: 0.19; --max-op: 0.61; animation-duration: 5.04s; animation-delay: 2.56s;"></div><div class="star" style="width: 2.58px; height: 2.58px; top: 75.39%; left: 31.22%; --min-op: 0.18; --max-op: 0.80; animation-duration: 4.38s; animation-delay: 2.09s;"></div><div class="star" style="width: 1px; height: 1px; top: 76.38%; left: 65.88%; --min-op: 0.23; --max-op: 0.56; animation-duration: 3.11s; animation-delay: 3.16s;"></div><div class="star" style="width: 1.7px; height: 1.7px; top: 27.37%; left: 21.1%; --min-op: 0.28; --max-op: 0.72; animation-duration: 4.99s; animation-delay: 3.6s;"></div><div class="star" style="width: 2.24px; height: 2.24px; top: 56.94%; left: 24.26%; --min-op: 0.18; --max-op: 0.80; animation-duration: 3.74s; animation-delay: 2.18s;"></div><div class="star" style="width: 1.94px; height: 1.94px; top: 30.14%; left: 45.1%; --min-op: 0.24; --max-op: 0.85; animation-duration: 3.6s; animation-delay: 2.88s;"></div><div class="star" style="width: 1.17px; height: 1.17px; top: 42.09%; left: 40.6%; --min-op: 0.18; --max-op: 0.69; animation-duration: 3.65s; animation-delay: 2.97s;"></div><div class="star" style="width: 2.39px; height: 2.39px; top: 78.36%; left: 27.77%; --min-op: 0.25; --max-op: 0.85; animation-duration: 4.5s; animation-delay: 0.58s;"></div><div class="star" style="width: 1.35px; height: 1.35px; top: 55.69%; left: 50.15%; --min-op: 0.14; --max-op: 0.65; animation-duration: 2.67s; animation-delay: 0.78s;"></div><div class="star" style="width: 1.7px; height: 1.7px; top: 15.41%; left: 48.25%; --min-op: 0.19; --max-op: 0.78; animation-duration: 5.14s; animation-delay: 0.98s;"></div><div class="star" style="width: 0.89px; height: 0.89px; top: 59.23%; left: 80.11%; --min-op: 0.14; --max-op: 0.67; animation-duration: 4.2s; animation-delay: 3.36s;"></div><div class="star" style="width: 2.08px; height: 2.08px; top: 43.17%; left: 30.71%; --min-op: 0.21; --max-op: 0.75; animation-duration: 4.34s; animation-delay: 2.14s;"></div><div class="star" style="width: 1.55px; height: 1.55px; top: 43.76%; left: 37.07%; --min-op: 0.29; --max-op: 0.85; animation-duration: 4.91s; animation-delay: 3.48s;"></div><div class="star" style="width: 2.59px; height: 2.59px; top: 19.36%; left: 68.7%; --min-op: 0.20; --max-op: 0.88; animation-duration: 2.95s; animation-delay: 1.25s;"></div><div class="star" style="width: 1.28px; height: 1.28px; top: 5.27%; left: 0.94%; --min-op: 0.17; --max-op: 0.87; animation-duration: 4.09s; animation-delay: 2.6s;"></div><div class="star" style="width: 2.41px; height: 2.41px; top: 76.95%; left: 73.25%; --min-op: 0.22; --max-op: 0.56; animation-duration: 3.07s; animation-delay: 3.42s;"></div><div class="star" style="width: 2.29px; height: 2.29px; top: 37%; left: 46.57%; --min-op: 0.29; --max-op: 0.67; animation-duration: 3.74s; animation-delay: 1.01s;"></div><div class="star" style="width: 2.56px; height: 2.56px; top: 49.86%; left: 30.8%; --min-op: 0.15; --max-op: 0.67; animation-duration: 5.33s; animation-delay: 2.04s;"></div><div class="star" style="width: 0.97px; height: 0.97px; top: 14.59%; left: 36.03%; --min-op: 0.29; --max-op: 0.66; animation-duration: 3.37s; animation-delay: 0.14s;"></div><div class="star" style="width: 1.86px; height: 1.86px; top: 60.42%; left: 72.02%; --min-op: 0.25; --max-op: 0.67; animation-duration: 4.96s; animation-delay: 2.71s;"></div><div class="star" style="width: 2.25px; height: 2.25px; top: 13.1%; left: 13.03%; --min-op: 0.14; --max-op: 0.61; animation-duration: 4.91s; animation-delay: 1.15s;"></div><div class="star" style="width: 0.73px; height: 0.73px; top: 76.63%; left: 38.27%; --min-op: 0.14; --max-op: 0.60; animation-duration: 2.82s; animation-delay: 0.27s;"></div><div class="star" style="width: 2.09px; height: 2.09px; top: 90.2%; left: 45.48%; --min-op: 0.23; --max-op: 0.63; animation-duration: 4.58s; animation-delay: 3.52s;"></div><div class="star" style="width: 0.69px; height: 0.69px; top: 44.86%; left: 4.55%; --min-op: 0.14; --max-op: 0.65; animation-duration: 3.48s; animation-delay: 0.99s;"></div></div>
+<div id="page-content" style="position:relative;" class="">
 <div class="glow"></div>
 <div class="nav-wrap">
 <nav>
@@ -23,47 +22,47 @@
 <a class="cta" href="#contact">Start a project</a>
 </nav>
 </div>
-<header class="container hero">
+<header class="container hero reveal in-view" style="transition-delay: 0s;">
 <div class="avatar icon">🙂</div>
 <h1>Hi, I'm Mara Ilić</h1>
-<p class="sub">I split my time between product design and front-end code — for startups, museums, and a few newsletters that pay in feedback.</p>
+<p class="sub">I split my time between product design and front-end code — for startups, museums, and a few newsletters that paδσδφδσy in feedback.</p>
 </header>
-<section class="section container" id="work">
+<section class="section container reveal in-view" id="work" style="transition-delay: 0.06s;">
 <span class="kicker">Selected work</span>
 <h2>A few things I've worked on</h2>
 <p class="lede">Each one started as a note about something that felt harder than it should.</p>
-<div class="entries">
-<div class="card entry">
+<div class="entries" data-drag-wired="1">
+<div class="card entry reveal" style="transition-delay: 0.12s;">
 <p class="meta">2024 · Product design</p>
 <h3>Wayfinder</h3>
 <p class="desc">A spatial audio guide for museums without screens.</p>
 <a class="btn-ghost entry-link" href="#" target="_blank" rel="noopener">View project →</a>
 </div>
-<div class="card entry">
+<div class="card entry reveal" style="transition-delay: 0.18s;">
 <p class="meta">2024 · Editorial</p>
 <h3>Slow Post</h3>
 <p class="desc">A newsletter about attention, sent every other Sunday.</p>
 <a class="btn-ghost entry-link" href="#" target="_blank" rel="noopener">View project →</a>
 </div>
-<div class="card entry">
+<div class="card entry reveal" style="transition-delay: 0.24s;">
 <p class="meta">2023 · Type design</p>
 <h3>Terra Type</h3>
 <p class="desc">A variable typeface commissioned for a mapping studio.</p>
 <a class="btn-ghost entry-link" href="#" target="_blank" rel="noopener">View project →</a>
 </div>
-<div class="card entry">
+<div class="card entry reveal" style="transition-delay: 0.3s;">
 <p class="meta">2022 · Print</p>
 <h3>Field Notes</h3>
 <p class="desc">A self-published zine on tools people build for themselves.</p>
 <a class="btn-ghost entry-link" href="#" target="_blank" rel="noopener">View project →</a>
 </div>
-<div class="card entry">
+<div class="card entry reveal" style="transition-delay: 0s;">
 <p class="meta">2021 · Engineering</p>
 <h3>Harbor</h3>
 <p class="desc">Booking software for three independent hostels on the coast.</p>
 <a class="btn-ghost entry-link" href="#" target="_blank" rel="noopener">View project →</a>
 </div>
-<div class="card entry">
+<div class="card entry reveal" style="transition-delay: 0.06s;">
 <p class="meta">Ongoing · Studio</p>
 <h3>Open slot</h3>
 <p class="desc">Taking on one new project this winter — get in touch early.</p>
@@ -71,7 +70,7 @@
 </div>
 </div>
 </section>
-<section class="section container" id="about">
+<section class="section container reveal" id="about" style="transition-delay: 0.12s;">
 <span class="kicker">About</span>
 <div class="about-wrap">
 <div>
@@ -80,26 +79,26 @@
 <a class="btn-ghost" href="#contact">Get in touch →</a>
 </div>
 <div class="stat-grid">
-<div class="stat-card">
+<div class="stat-card reveal" style="transition-delay: 0.18s;">
 <div class="num">8+</div>
 <div class="label">Years in practice</div>
 </div>
-<div class="stat-card">
+<div class="stat-card reveal" style="transition-delay: 0.24s;">
 <div class="num">40+</div>
 <div class="label">Projects shipped</div>
 </div>
-<div class="stat-card">
+<div class="stat-card reveal" style="transition-delay: 0.3s;">
 <div class="num">12</div>
 <div class="label">Countries worked with</div>
 </div>
-<div class="stat-card">
+<div class="stat-card reveal" style="transition-delay: 0s;">
 <div class="num">3</div>
 <div class="label">Museums</div>
 </div>
 </div>
 </div>
 </section>
-<section class="cta-section container" id="contact">
+<section class="cta-section container reveal" id="contact" style="transition-delay: 0.06s;">
 <span class="kicker">Get in touch</span>
 <h2>Have something worth building?</h2>
 <p class="sub" style="margin-bottom: 32px;">One project slot left for January 2027 — write in and tell me what you're working on.</p>
@@ -107,7 +106,7 @@
 <a class="btn-primary" href="mailto:hello@marailic.studio">hello@marailic.studio</a>
 </div>
 </section>
-<div class="container wordmark-wrap">
+<div class="container wordmark-wrap reveal" style="transition-delay: 0.12s;">
 <p class="wordmark">PORTFOLIO</p>
 <footer>
 <span>© 2026 Mara Ilić</span>
@@ -119,31 +118,9 @@
 </footer>
 </div>
 </div>
-<div class="edit-banner" id="editBanner">
-<button id="exitBtn">Exit edit mode</button>
-</div>
-<div class="fab-wrap" id="fabWrap">
-<div class="fab-bar discord" id="discordBar">
-<span class="dot"></span>
-<span class="social-label">Check my socials</span>
-<span class="edit-pencil" id="socialsPencil" contenteditable="false" title="Edit link URL">✎</span>
-</div>
-<div class="fab-bar edit" id="editBar">
-<span class="dot"></span> Edit this page
-</div>
-<button class="fab-main" id="fabMain">+</button>
-</div>
-<div class="modal-overlay" id="passModal">
-<div class="modal-box">
-<h4>Enter password to edit</h4>
-<input type="password" id="passInput" placeholder="Password" autocomplete="off" />
-<p class="err" id="passErr">Incorrect password.</p>
-<div class="row">
-<button class="cancel" id="passCancel">Cancel</button>
-<button class="confirm" id="passConfirm">Unlock</button>
-</div>
-</div>
-</div>
+
+
+
 <script id="siteEffectsScript">(function _a7(){
 const _a1 = document.createElement('div');
 _a1.id = 'stars-bg';
@@ -208,572 +185,7 @@ _a8.unobserve(entry.target);
 }, { threshold: 0.12 });
 _a16.forEach(el => _a8.observe(el));
 })();</script>
-<script id="pageEditorScript">const _b3 = "https://linktr.ee/your-username"; 
-const _b1 = "85e43d82ab6d7cff2443f7df867b6a1c4e8ac36b8602594a9be2b4103d142061";
-async function _b46(text){
-const _b14 = new TextEncoder().encode(text);
-const digest = await crypto.subtle.digest('SHA-256', _b14);
-return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-const _b26 = document.getElementById('fabMain');
-const _b28 = document.getElementById('fabWrap');
-const _b18 = document.getElementById('discordBar');
-const _b47 = document.getElementById('socialsPencil');
-const _b21 = document.getElementById('editBar');
-const _b41 = document.getElementById('passModal');
-const _b40 = document.getElementById('passInput');
-const _b39 = document.getElementById('passErr');
-const _b38 = document.getElementById('passConfirm');
-const _b37 = document.getElementById('passCancel');
-const _b20 = document.getElementById('editBanner');
-const _b24 = document.getElementById('exitBtn');
-const _b35 = document.getElementById('page-content');
-_b18.dataset.url = _b3;
-let _b27 = false;
-function _b45(open){
-_b27 = open;
-_b26.classList.toggle('open', open);
-_b18.classList.toggle('show', open);
-_b21.classList.toggle('show', open);
-}
-_b26.addEventListener('click', () => _b45(!_b27));
-document.addEventListener('click', (e) => {
-if (_b27 && !_b28.contains(e.target)) _b45(false);
-});
-_b18.addEventListener('click', (e) => {
-if (_b28.classList.contains('editing')) return; 
-window.open(_b18.dataset.url, '_blank', 'noopener');
-_b45(false);
-});
-_b47.addEventListener('mousedown', (e) => e.preventDefault());
-_b47.addEventListener('click', (e) => {
-e.stopPropagation();
-const _b33 = window.prompt('Link for "Check my socials":', _b18.dataset.url || '');
-if (_b33 !== null && _b33.trim() !== '') _b18.dataset.url = _b33.trim();
-});
-_b21.addEventListener('click', () => {
-_b45(false);
-_b39.style.display = 'none';
-_b40.value = '';
-_b41.classList.add('show');
-setTimeout(() => _b40.focus(), 50);
-});
-_b37.addEventListener('click', () => _b41.classList.remove('show'));
-_b40.addEventListener('keydown', (e) => {
-if (e.key === 'Enter') _b38.click();
-});
-let _b22 = '';
-_b38.addEventListener('click', async () => {
-const _b30 = await _b46(_b40.value);
-if (_b30 === _b1) {
-_b22 = _b30;
-_b41.classList.remove('show');
-_b23();
-} else {
-_b39.style.display = 'block';
-}
-});
-const _b0 = ['.entries'];
-const _b2 = '#page-content > header, #page-content > section, #page-content > .wordmark-wrap';
-function _b31(root){
-root.querySelectorAll('*').forEach(el => {
-const _b48 = el.tagName.toLowerCase();
-if (['script','style'].includes(_b48)) return;
-if (el.classList.contains('edit-del') || el.classList.contains('edit-del-section') || el.classList.contains('edit-add-ghost') || el.classList.contains('edit-drag') || el.classList.contains('edit-img-btn') || el.classList.contains('edit-resize') || el.classList.contains('edit-link-pencil') || el.classList.contains('edit-photo-remove') || el.classList.contains('edit-add-photo-ghost')) return;
-el.setAttribute('contenteditable', 'true');
-});
-if (root.nodeType === 1 && !['edit-del','edit-del-section','edit-add-ghost','edit-drag','edit-img-btn','edit-resize','edit-link-pencil','edit-photo-remove','edit-add-photo-ghost'].some(c => root.classList.contains(c))) {
-root.setAttribute('contenteditable', 'true');
-}
-}
-function _b5(box){
-if (box.querySelector(':scope > .edit-del')) return;
-const _b17 = document.createElement('span');
-_b17.className = 'edit-del';
-_b17.textContent = '×';
-_b17.setAttribute('contenteditable', 'false');
-_b17.title = 'Delete this box';
-_b17.addEventListener('mousedown', (e) => e.preventDefault());
-_b17.addEventListener('click', (e) => {
-e.stopPropagation();
-box.remove();
-});
-box.appendChild(_b17);
-}
-const _c0 = { dragging: null };
-function _c1(box, container){
-box.querySelectorAll(':scope > .edit-drag').forEach(el => el.remove());
-const _c5 = document.createElement('span');
-_c5.className = 'edit-drag';
-_c5.textContent = '\u283f';
-_c5.title = 'Drag to reorder';
-_c5.setAttribute('contenteditable', 'false');
-_c5.draggable = true;
-_c5.addEventListener('mousedown', (e) => e.stopPropagation());
-_c5.addEventListener('dragstart', (e) => {
-_c0.dragging = box;
-box.classList.add('dragging');
-e.dataTransfer.effectAllowed = 'move';
-try { e.dataTransfer.setData('text/plain', ''); } catch (err) {}
-});
-_c5.addEventListener('dragend', () => {
-box.classList.remove('dragging');
-_c0.dragging = null;
-});
-box.appendChild(_c5);
-}
-function _c3(container, x, y){
-const _c6 = Array.from(container.children).filter(el => el !== _c0.dragging && !el.classList.contains('edit-add-ghost'));
-const _c37 = container.classList.contains('entries');
-let _c7 = null;
-let _c8 = Infinity;
-_c6.forEach(box => {
-const _c9 = box.getBoundingClientRect();
-if (_c37) {
-const _c10 = _c9.top + _c9.height / 2;
-if (y < _c10 && (_c10 - y) < _c8) { _c8 = _c10 - y; _c7 = box; }
-} else {
-const _c10 = _c9.left + _c9.width / 2;
-if (x < _c10 && (_c10 - x) < _c8) { _c8 = _c10 - x; _c7 = box; }
-}
-});
-return _c7;
-}
-function _c2(container){
-if (container.dataset.dragWired) return;
-container.dataset.dragWired = '1';
-container.addEventListener('dragover', (e) => {
-if (!_c0.dragging || _c0.dragging.parentElement !== container) return;
-e.preventDefault();
-const _c11 = _c3(container, e.clientX, e.clientY);
-const _c12 = container.querySelector(':scope > .edit-add-ghost');
-if (_c11) container.insertBefore(_c0.dragging, _c11);
-else container.insertBefore(_c0.dragging, _c12);
-});
-container.addEventListener('drop', (e) => { e.preventDefault(); });
-}
-function _c4(icon){
-if (icon.querySelector(':scope > .edit-img-btn')) return;
-const _c13 = document.createElement('button');
-_c13.className = 'edit-img-btn';
-_c13.textContent = '\ud83d\uddbc';
-_c13.title = 'Replace with an image';
-_c13.type = 'button';
-_c13.setAttribute('contenteditable', 'false');
-_c13.addEventListener('mousedown', (e) => e.preventDefault());
-_c13.addEventListener('click', (e) => {
-e.stopPropagation();
-const _c14 = document.createElement('input');
-_c14.type = 'file';
-_c14.accept = 'image/*';
-_c14.addEventListener('change', () => {
-const _c15 = _c14.files[0];
-if (!_c15) return;
-const _c18 = new Image();
-const _c19 = URL.createObjectURL(_c15);
-_c18.onload = () => {
-const _c20 = 320;
-let _c21 = _c18.naturalWidth, _c22 = _c18.naturalHeight;
-if (_c21 > _c22 && _c21 > _c20) { _c22 = Math.round(_c22 * (_c20 / _c21)); _c21 = _c20; }
-else if (_c22 >= _c21 && _c22 > _c20) { _c21 = Math.round(_c21 * (_c20 / _c22)); _c22 = _c20; }
-const _c23 = document.createElement('canvas');
-_c23.width = _c21;
-_c23.height = _c22;
-_c23.getContext('2d').drawImage(_c18, 0, 0, _c21, _c22);
-const _c24 = (_c15.type === 'image/png' || _c15.type === 'image/gif' || _c15.type === 'image/webp') ? 'image/png' : 'image/jpeg';
-const _c25 = _c23.toDataURL(_c24, 0.82);
-URL.revokeObjectURL(_c19);
-icon.innerHTML = '';
-const _c17 = document.createElement('img');
-_c17.src = _c25;
-_c17.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
-_c17.setAttribute('contenteditable', 'false');
-icon.appendChild(_c17);
-icon.appendChild(_c13);
-_c26(icon);
-};
-_c18.onerror = () => {
-URL.revokeObjectURL(_c19);
-window.alert('Could not read that image file.');
-};
-_c18.src = _c19;
-});
-_c14.click();
-});
-icon.appendChild(_c13);
-}
-function _c26(icon){
-icon.querySelectorAll(':scope > .edit-resize').forEach(el => el.remove());
-const _c27 = document.createElement('span');
-_c27.className = 'edit-resize';
-_c27.title = 'Drag to resize';
-_c27.setAttribute('contenteditable', 'false');
-_c27.addEventListener('mousedown', (e) => {
-e.preventDefault();
-e.stopPropagation();
-const _c28 = e.clientX, _c29 = e.clientY;
-const _c30 = icon.getBoundingClientRect();
-const _c31 = _c30.width;
-function _c32(_c33){
-const _c34 = Math.max(_c33.clientX - _c28, _c33.clientY - _c29);
-const _c35 = Math.max(24, Math.min(200, Math.round(_c31 + _c34)));
-icon.style.width = _c35 + 'px';
-icon.style.height = _c35 + 'px';
-}
-function _c36(){
-document.removeEventListener('mousemove', _c32);
-document.removeEventListener('mouseup', _c36);
-}
-document.addEventListener('mousemove', _c32);
-document.addEventListener('mouseup', _c36);
-});
-icon.appendChild(_c27);
-}
-function _pLoadImage(file, maxDim, onDone){
-const _p3 = new Image();
-const _p4 = URL.createObjectURL(file);
-_p3.onload = () => {
-let _p5 = _p3.naturalWidth, _p6 = _p3.naturalHeight;
-if (_p5 > maxDim || _p6 > maxDim) {
-if (_p5 >= _p6) { _p6 = Math.round(_p6 * (maxDim / _p5)); _p5 = maxDim; }
-else { _p5 = Math.round(_p5 * (maxDim / _p6)); _p6 = maxDim; }
-}
-const _p7 = document.createElement('canvas');
-_p7.width = _p5;
-_p7.height = _p6;
-_p7.getContext('2d').drawImage(_p3, 0, 0, _p5, _p6);
-const _p8 = (file.type === 'image/png' || file.type === 'image/gif' || file.type === 'image/webp') ? 'image/png' : 'image/jpeg';
-const _p9 = _p7.toDataURL(_p8, 0.85);
-URL.revokeObjectURL(_p4);
-onDone(_p9);
-};
-_p3.onerror = () => {
-URL.revokeObjectURL(_p4);
-window.alert('Could not read that image file.');
-};
-_p3.src = _p4;
-}
-function _pPickImage(onDone){
-const _p10 = document.createElement('input');
-_p10.type = 'file';
-_p10.accept = 'image/*';
-_p10.addEventListener('change', () => {
-const _p11 = _p10.files[0];
-if (!_p11) return;
-_pLoadImage(_p11, 1400, onDone);
-});
-_p10.click();
-}
-function _pSnapSize(target, max){
-const _p33 = [48, 64, 80, 96, 120, 150, 180, 220, 260, 320, 400, 480, 600, 760, 960, 1120];
-let _p34 = null, _p35 = Infinity;
-for (const _p36 of _p33){
-if (_p36 > max + 1) break;
-const _p38 = Math.abs(_p36 - target);
-if (_p38 < _p35) { _p35 = _p38; _p34 = _p36; }
-}
-if (_p34 === null) _p34 = Math.max(40, Math.round(max));
-return Math.min(_p34, Math.max(40, Math.round(max)));
-}
-function _pWirePhotoWrap(wrap){
-wrap.querySelectorAll(':scope > .edit-img-btn, :scope > .edit-resize').forEach(el => el.remove());
-const _p12 = document.createElement('button');
-_p12.className = 'edit-img-btn';
-_p12.textContent = '\ud83d\uddbc';
-_p12.title = 'Replace image';
-_p12.type = 'button';
-_p12.setAttribute('contenteditable', 'false');
-_p12.addEventListener('mousedown', (e) => e.preventDefault());
-_p12.addEventListener('click', (e) => {
-e.stopPropagation();
-_pPickImage((_p13) => {
-const _p14 = wrap.querySelector(':scope > img');
-if (_p14) _p14.src = _p13;
-});
-});
-wrap.appendChild(_p12);
-const _p15 = document.createElement('span');
-_p15.className = 'edit-resize';
-_p15.title = 'Drag to resize';
-_p15.setAttribute('contenteditable', 'false');
-_p15.addEventListener('mousedown', (e) => {
-e.preventDefault();
-e.stopPropagation();
-const _p16 = e.clientX;
-const _p17 = wrap.getBoundingClientRect().width;
-const _p37 = wrap.parentElement ? wrap.parentElement.getBoundingClientRect().width : 1120;
-function _p18(ev){
-const _p19 = ev.clientX - _p16;
-const _p20 = _pSnapSize(_p17 + _p19, _p37);
-wrap.style.width = _p20 + 'px';
-}
-function _p21(){
-document.removeEventListener('mousemove', _p18);
-document.removeEventListener('mouseup', _p21);
-}
-document.addEventListener('mousemove', _p18);
-document.addEventListener('mouseup', _p21);
-});
-wrap.appendChild(_p15);
-}
-function _pBuildPhotoWrap(src){
-const _p22 = document.createElement('div');
-_p22.className = 'photo-wrap';
-_p22.style.cssText = 'position:relative;max-width:480px;width:100%;margin:0 auto;';
-const _p23 = document.createElement('img');
-_p23.src = src;
-_p23.style.cssText = 'width:100%;height:auto;display:block;border-radius:16px;';
-_p23.setAttribute('contenteditable', 'false');
-_p22.appendChild(_p23);
-_pWirePhotoWrap(_p22);
-return _p22;
-}
-function _pAddPhotoSection(referenceNode){
-_pPickImage((_p24) => {
-const _p25 = document.createElement('section');
-_p25.className = 'section container photo-section';
-_p25.appendChild(_pBuildPhotoWrap(_p24));
-_b35.insertBefore(_p25, referenceNode);
-_b31(_p25);
-_p25.querySelectorAll('img').forEach(im => im.setAttribute('contenteditable', 'false'));
-_b8(_p25);
-});
-}
-function _pWireCardPhotoWrap(wrap){
-wrap.querySelectorAll(':scope > .edit-photo-remove').forEach(el => el.remove());
-_pWirePhotoWrap(wrap);
-const _p27 = document.createElement('button');
-_p27.className = 'edit-photo-remove';
-_p27.textContent = '\u00d7';
-_p27.title = 'Remove photo';
-_p27.type = 'button';
-_p27.setAttribute('contenteditable', 'false');
-_p27.addEventListener('mousedown', (e) => e.preventDefault());
-_p27.addEventListener('click', (e) => {
-e.stopPropagation();
-wrap.remove();
-});
-wrap.appendChild(_p27);
-}
-function _pEnsureCardPhotoGhost(card){
-if (card.querySelector(':scope > .edit-add-photo-ghost')) return;
-const _p28 = document.createElement('div');
-_p28.className = 'edit-add-photo-ghost';
-_p28.textContent = '+ Photo';
-_p28.setAttribute('contenteditable', 'false');
-_p28.addEventListener('mousedown', (e) => e.preventDefault());
-_p28.addEventListener('click', (e) => {
-e.stopPropagation();
-_pPickImage((_p29) => {
-const _p30 = document.createElement('div');
-_p30.className = 'photo-wrap card-photo-wrap';
-_p30.style.cssText = 'display:inline-block;vertical-align:top;position:relative;width:96px;margin:0 8px 8px 0;';
-const _p31 = document.createElement('img');
-_p31.src = _p29;
-_p31.style.cssText = 'width:100%;height:auto;display:block;border-radius:10px;';
-_p31.setAttribute('contenteditable', 'false');
-_p30.appendChild(_p31);
-card.insertBefore(_p30, _p28);
-_pWireCardPhotoWrap(_p30);
-});
-});
-card.insertBefore(_p28, card.firstChild);
-}
-function _pWireCard(card){
-card.querySelectorAll(':scope > .photo-wrap').forEach(w => _pWireCardPhotoWrap(w));
-_pEnsureCardPhotoGhost(card);
-}
-function _lWireAnchor(a){
-if (a.querySelector(':scope > .edit-link-pencil')) return;
-const _l1 = document.createElement('span');
-_l1.className = 'edit-link-pencil';
-_l1.textContent = '\u270e';
-_l1.title = 'Edit link URL';
-_l1.setAttribute('contenteditable', 'false');
-_l1.addEventListener('mousedown', (e) => e.preventDefault());
-_l1.addEventListener('click', (e) => {
-e.stopPropagation();
-e.preventDefault();
-const _l2 = window.prompt('Link URL:', a.getAttribute('href') || '');
-if (_l2 !== null && _l2.trim() !== '') a.setAttribute('href', _l2.trim());
-});
-a.appendChild(_l1);
-}
-function _lWireLinks(root){
-root.querySelectorAll('a[href]').forEach(a => _lWireAnchor(a));
-}
-function _b7(container){
-const _b29 = document.createElement(container.matches('.logos') ? 'span' : 'div');
-_b29.className = 'edit-add-ghost';
-_b29.textContent = '+ Add box';
-_b29.setAttribute('contenteditable', 'false');
-_b29.addEventListener('mousedown', (e) => e.preventDefault());
-_b29.addEventListener('click', (e) => {
-e.stopPropagation();
-const _b42 = Array.from(container.children).filter(c => !c.classList.contains('edit-add-ghost'));
-const _b49 = _b42[_b42.length - 1];
-let _b32;
-if (_b49) {
-_b32 = _b49.cloneNode(true);
-const _b34 = _b32.querySelector('.edit-del');
-if (_b34) _b34.remove();
-_b32.querySelectorAll('.edit-drag, .edit-img-btn, .edit-resize, .edit-link-pencil, .edit-photo-remove, .edit-add-photo-ghost').forEach(el => el.remove());
-} else {
-_b32 = document.createElement(container.matches('.logos') ? 'span' : 'div');
-_b32.textContent = 'New item';
-}
-container.insertBefore(_b32, _b29);
-_b31(_b32);
-_b5(_b32);
-_c1(_b32, container);
-_b32.querySelectorAll('.icon').forEach(el => {
-_c4(el);
-if (el.querySelector(':scope > img')) _c26(el);
-});
-_lWireLinks(_b32);
-if (_b32.classList.contains('card')) _pWireCard(_b32);
-});
-container.appendChild(_b29);
-}
-function _b8(section){
-if (section.querySelector(':scope > .edit-del-section')) return;
-const _b17 = document.createElement('button');
-_b17.className = 'edit-del-section';
-_b17.textContent = 'Remove section';
-_b17.setAttribute('contenteditable', 'false');
-_b17.addEventListener('mousedown', (e) => e.preventDefault());
-_b17.addEventListener('click', (e) => {
-e.stopPropagation();
-section.remove();
-});
-section.appendChild(_b17);
-}
-function _b9(referenceNode){
-const _b51 = document.createElement('div');
-_b51.className = 'edit-add-row';
-_b51.setAttribute('contenteditable', 'false');
-const _b29 = document.createElement('div');
-_b29.className = 'edit-add-section';
-_b29.textContent = '+ Add section here';
-_b29.setAttribute('contenteditable', 'false');
-_b29.addEventListener('mousedown', (e) => e.preventDefault());
-_b29.addEventListener('click', (e) => {
-e.stopPropagation();
-const _b50 = document.createElement('section');
-_b50.className = 'section container';
-_b50.innerHTML = '<span class="kicker">New section</span><h2>New section heading</h2><p class="lede">Write something here.</p>';
-_b35.insertBefore(_b50, _b51);
-_b31(_b50);
-_b8(_b50);
-});
-const _p26 = document.createElement('div');
-_p26.className = 'edit-add-section';
-_p26.textContent = '+ Add photo here';
-_p26.setAttribute('contenteditable', 'false');
-_p26.addEventListener('mousedown', (e) => e.preventDefault());
-_p26.addEventListener('click', (e) => {
-e.stopPropagation();
-_pAddPhotoSection(_b51);
-});
-_b51.appendChild(_b29);
-_b51.appendChild(_p26);
-_b35.insertBefore(_b51, referenceNode);
-}
-function _b10(){
-_b35.querySelectorAll(':scope > .edit-add-row').forEach(g => g.remove());
-const _b12 = Array.from(_b35.children).filter(el => el.matches('header, section, .wordmark-wrap'));
-if (_b12.length === 0) return;
-_b9(_b12[0]); 
-_b12.forEach(b => _b9(b.nextSibling)); 
-}
-function _b6(){
-_b0.forEach(sel => {
-_b35.querySelectorAll(sel).forEach(container => {
-Array.from(container.children).forEach(child => {
-if (!child.classList.contains('edit-add-ghost')) {
-_b5(child);
-_c1(child, container);
-child.querySelectorAll('.icon').forEach(el => {
-_c4(el);
-if (el.querySelector(':scope > img')) _c26(el);
-});
-_lWireLinks(child);
-if (child.classList.contains('card')) _pWireCard(child);
-}
-});
-_b7(container);
-_c2(container);
-});
-});
-_b35.querySelectorAll(_b2).forEach(section => _b8(section));
-const _c38 = _b35.querySelector('.hero .avatar.icon');
-if (_c38) {
-_c4(_c38);
-if (_c38.querySelector(':scope > img')) _c26(_c38);
-}
-_lWireLinks(_b35);
-_b10();
-}
-function _b23(){
-_b31(_b35);
-_b6();
-_b35.classList.add('editing');
-_b28.classList.add('editing');
-_b18.querySelector('.social-label').setAttribute('contenteditable', 'true');
-_b20.classList.add('show');
-}
-function _b25(){
-_b35.querySelectorAll('[contenteditable]').forEach(el => {
-el.removeAttribute('contenteditable');
-});
-_b35.querySelectorAll('.edit-del, .edit-del-section, .edit-add-ghost, .edit-add-section, .edit-add-row, .edit-drag, .edit-img-btn, .edit-resize, .edit-link-pencil, .edit-photo-remove, .edit-add-photo-ghost').forEach(el => el.remove());
-_b35.querySelectorAll('[data-drag-wired]').forEach(el => delete el.dataset.dragWired);
-_c0.dragging = null;
-_b35.classList.remove('editing');
-_b28.classList.remove('editing');
-_b18.querySelector('.social-label')?.removeAttribute('contenteditable');
-_b20.classList.remove('show');
-}
-function _b13(){
-const _b15 = document.documentElement.cloneNode(true);
-_b15.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
-_b15.querySelectorAll('.edit-del, .edit-del-section, .edit-add-ghost, .edit-add-section, .edit-add-row, .edit-drag, .edit-img-btn, .edit-resize, .edit-link-pencil, .edit-photo-remove, .edit-add-photo-ghost').forEach(el => el.remove());
-_b15.querySelector('#page-content')?.classList.remove('editing');
-_b15.querySelector('#fabWrap')?.classList.remove('editing');
-_b15.querySelector('.edit-banner')?.remove();
-_b15.querySelector('.fab-wrap')?.remove();
-_b15.querySelector('.modal-overlay')?.remove();
-_b15.querySelector('#pageEditorScript')?.remove(); 
-return '<!DOCTYPE html>\n' + _b15.outerHTML;
-}
-async function _b44(){
-try {
-const _b36 = _b13();
-const _b43 = await fetch('/api/save', {
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-body: JSON.stringify({ passwordHash: _b22, html: _b36 })
-});
-const _b16 = await _b43.json().catch(() => ({}));
-if (_b43.ok && _b16.ok) {
-window.alert('Saved! Your changes will go live in about a minute.');
-return true;
-}
-window.alert('Save failed: ' + (_b16.error || `HTTP ${_b43.status}`));
-return false;
-} catch (err) {
-window.alert('Could not reach the save server. Please try again.');
-return false;
-}
-}
-_b24.addEventListener('click', async () => {
-try {
-if (window.confirm('Save your changes to the live site now?')) {
-await _b44();
-}
-} finally {
-_b25();
-}
-});</script>
-</body>
-</html>
+
+
+
+</body></html>
