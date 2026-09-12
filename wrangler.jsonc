@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  // Set this to today's date when you deploy
+  "compatibility_date": "2026-09-11",
+  "main": "src/index.js",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    // Make sure /api/* always runs your Worker code instead of
+    // falling through to the static-asset 404 handler.
+    "run_worker_first": ["/api/*"]
+  }
+}
